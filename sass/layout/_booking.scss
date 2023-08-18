@@ -1,0 +1,162 @@
+.section-booking {
+  padding: 15rem 0;
+  background: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  @include respond(sm) {
+    padding: 10rem 0;
+  }
+
+  .booking {
+    max-width: 114rem;
+    margin: 0 auto;
+    background: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 50%,
+        transparent 50%
+      ),
+      url(../img/nat-10.jpg);
+    background-size: cover;
+    position: relative;
+    height: 54.2rem;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 0 4rem 0rem rgba(0, 0, 0, 0.5);
+
+    @include respond(md) {
+      background: linear-gradient(
+          105deg,
+          rgba($color-white, 0.9) 0%,
+          rgba($color-white, 0.9) 70%,
+          transparent 70%
+        ),
+        url(../img/nat-10.jpg);
+    }
+
+    @include respond(xs) {
+      height: auto;
+      background: linear-gradient(
+          105deg,
+          rgba($color-white, 0.9) 0%,
+          rgba($color-white, 0.9) 100%,
+          transparent 100%
+        ),
+        url(../img/nat-10.jpg);
+    }
+
+    &__form {
+      font-size: 1.4rem;
+      padding: 4rem;
+      width: 50%;
+
+      @include respond(md) {
+        width: 70%;
+      }
+
+      @include respond(xs) {
+        width: 100%;
+      }
+
+      .input-field {
+        display: block;
+        width: 90%;
+        padding: 2rem;
+        background-color: $color-white;
+        border: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 3px;
+        margin-bottom: 4rem;
+
+        @include respond(xs) {
+          width: 100%;
+        }
+      }
+
+      .input-field:focus {
+        outline: none;
+        border-bottom: 3px solid $color-primary;
+        transition: all 0.4s;
+      }
+
+      .input-field:focus:invalid {
+        border-bottom: 3px solid $color-secondary;
+      }
+
+      ::placeholder {
+        color: $color-grey;
+        text-transform: uppercase;
+        font-family: inherit;
+        font-size: 1.2rem;
+      }
+
+      .booking__form__label__container {
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+
+        @include respond(xs) {
+          justify-content: center;
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+
+      .booking__form__radio__label {
+        color: $color-grey-dark;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 4rem;
+        font-size: $font-default;
+
+        .radio-btn {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 3rem;
+          width: 3rem;
+          background-color: #eee;
+          border-radius: 50%;
+          border: 0.5rem solid $color-primary;
+          cursor: pointer;
+
+          &:after {
+            content: '';
+            position: absolute;
+            display: none;
+          }
+        }
+
+        & .radio-btn:checked ~ .checkmark:after {
+          display: block;
+        }
+
+        & .checkmark:after {
+          @include positonCenter;
+          width: 1.25rem;
+          height: 1.25rem;
+          border-radius: 50%;
+          background: $color-primary;
+        }
+      }
+
+      .submit-btn {
+        @include respond(xs) {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

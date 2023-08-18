@@ -1,0 +1,199 @@
+.section-tour-package {
+  padding: 20rem 0;
+
+  @include respond(sm) {
+    padding: 10rem 0;
+  }
+
+  .tour-package__card__container {
+    max-width: 114rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 4rem;
+    flex-wrap: wrap;
+
+    @include respond(sm) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 33rem;
+      height: 50rem;
+      perspective: 150rem;
+
+      @include respond(lg) {
+        width: 30rem;
+      }
+
+      @include respond(md) {
+        width: 33rem;
+      }
+
+      @include respond(md) {
+        height: auto;
+      }
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+
+      @include respond(sm) {
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+
+      @include respond(md) {
+        transform: rotateY(0deg);
+      }
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 3px;
+      overflow: hidden;
+
+      @include respond(md) {
+        box-shadow: none;
+        position: relative;
+        border-radius: 0;
+      }
+    }
+
+    .flip-card-front {
+      .flip-card-front__img {
+        width: 100%;
+        height: 20rem;
+        background-size: cover;
+        background-position: top;
+        background-blend-mode: screen;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        &__title {
+          color: $color-white;
+          font-size: 3rem;
+          font-weight: 300;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          .img__title {
+            display: inline-block;
+            padding: 0 1rem;
+          }
+
+          .img__title--1 {
+            background: linear-gradient(to bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary, 0.8));
+          }
+
+          .img__title--2 {
+            background: linear-gradient(to bottom, rgba($color-primary-light, 0.8), rgba($color-primary, 0.8));
+          }
+
+          .img__title--3 {
+            background: linear-gradient(to bottom, rgba($color-tertiary-light, 0.8), rgba($color-tertiary, 0.8));
+          }
+        }
+      }
+
+      .flip-card-front__img--1 {
+        background-image: url(../img/nat-5.jpg);
+        background-color: $color-secondary;
+      }
+
+      .flip-card-front__img--2 {
+        background-image: url(../img/nat-6.jpg);
+        background-color: $color-primary;
+      }
+
+      .flip-card-front__img--3 {
+        background-image: url(../img/nat-7.jpg);
+        background-color: $color-tertiary;
+      }
+
+      .flip-card-front__list {
+        font-size: $font-default;
+        color: $color-grey-dark;
+        padding: 0 5rem;
+
+        &__item {
+          padding: 1.3rem;
+        }
+
+        &__item:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light;
+        }
+      }
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: space-between;
+      padding: 4rem;
+      color: $color-white;
+
+      @include respond(md) {
+        transform: rotateY(0deg);
+      }
+
+      &__title {
+        font-size: $font-default;
+        font-weight: 400;
+        display: inline-block;
+      }
+
+      &__pricing {
+        font-size: 6rem;
+        font-weight: 200;
+        display: inline-block;
+      }
+
+      .btn {
+        margin: 0;
+      }
+
+      &__c1 {
+        background: linear-gradient(to right bottom, $color-secondary-light, $color-secondary);
+      }
+
+      &__c2 {
+        background: linear-gradient(to right bottom, $color-primary-light, $color-primary);
+      }
+
+      &__c3 {
+        background: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary);
+      }
+    }
+  }
+
+  .section-card-button {
+    margin-top: 4rem;
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,44 @@
+@mixin positonCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Responsive design
+@mixin respond($device) {
+  @if $device == xs {
+    @media (max-width: 36em) {
+      // 1 em = 16px; So 576/16 = 35.44em
+      @content;
+    }
+  }
+
+  @if $device == sm {
+    @media (max-width: 48em) {
+      // 1 em = 16px; So 768/16 = 48em
+      @content;
+    }
+  }
+
+  @if $device == md {
+    @media (max-width: 992px) {
+      // 1 em = 16px; So 992/16 = 62em
+      @content;
+    }
+  }
+
+  @if $device == lg {
+    @media (max-width: 74em) {
+      // 1 em = 16px; So 1184/16 = 74em
+      @content;
+    }
+  }
+
+  @if $device == xl {
+    @media (min-width: 75em) {
+      // 1 em = 16px; So 1200/16 = 75em
+      @content;
+    }
+  }
+}

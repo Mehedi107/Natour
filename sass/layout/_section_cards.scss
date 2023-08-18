@@ -1,0 +1,75 @@
+.section-card {
+  padding: 20rem 0;
+  background: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: skewY(-7deg);
+
+  @include respond(sm) {
+    padding: 10rem 0;
+  }
+
+  .section-card__container {
+    transform: skewY(7deg);
+    max-width: 114rem;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 3rem;
+
+    @include respond(lg) {
+      grid-template-columns: repeat(2, auto);
+      gap: 4rem;
+    }
+
+    @include respond(lg) {
+      gap: 4rem;
+    }
+
+    @include respond(sm) {
+      grid-template-columns: repeat(1, auto);
+      gap: 2rem;
+    }
+
+    .card {
+      text-align: center;
+      font-size: $font-default;
+      color: $color-grey-dark;
+      width: 25rem;
+      height: 30rem;
+      padding: 2rem;
+      background-color: rgba($color-white, 0.9);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        transform: translateY(-1rem);
+      }
+
+      @include respond(lg) {
+        width: 36rem;
+        // height: ;
+      }
+
+      @include respond(sm) {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      &__icon {
+        font-size: 52px;
+        color: $color-primary-light;
+        --ionicon-stroke-width: 16px;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
