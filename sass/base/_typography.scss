@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 5 version
+*/
+
 $font-default: 1.6rem;
 
 .heading-primary {
@@ -6,6 +13,7 @@ $font-default: 1.6rem;
     font-size: 6.2rem;
     letter-spacing: 3.6rem;
     display: block;
+    -webkit-animation: slide-from-left 1s ease-in-out;
     animation: slide-from-left 1s ease-in-out;
 
     @include respond(lg) {
@@ -25,6 +33,7 @@ $font-default: 1.6rem;
     font-size: 2.4rem;
     display: block;
     letter-spacing: 1.5rem;
+    -webkit-animation: slide-from-right 1s ease-in-out;
     animation: slide-from-right 1s ease-in-out;
 
     @include respond(lg) {
@@ -41,20 +50,22 @@ $font-default: 1.6rem;
 
 .heading-secondary {
   text-align: center;
-  background: linear-gradient(
-    to right,
-    $color-primary-light,
-    $color-primary-dark
-  );
+  background: -webkit-gradient(linear, left top, right top, from($color-primary-light), to($color-primary-dark));
+  background: -o-linear-gradient(left, $color-primary-light, $color-primary-dark);
+  background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
   color: transparent;
   -webkit-background-clip: text;
   font-size: 3.6rem;
   font-weight: 700;
   margin-bottom: 6.4rem;
   letter-spacing: 2px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 
   &:hover {
+    -webkit-transform: skewY(2deg) skewX(15deg) scale(1.1);
+    -ms-transform: skewY(2deg) skewX(15deg) scale(1.1);
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   }

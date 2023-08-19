@@ -1,10 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 5 version
+*/
+
 .section-booking {
   padding: 15rem 0;
-  background: linear-gradient(
-    to right bottom,
-    $color-primary-light,
-    $color-primary-dark
-  );
+  background: -webkit-gradient(linear, left top, right bottom, from($color-primary-light), to($color-primary-dark));
+  background: -o-linear-gradient(left top, $color-primary-light, $color-primary-dark);
+  background: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
 
   @include respond(sm) {
     padding: 10rem 0;
@@ -13,39 +18,25 @@
   .booking {
     max-width: 114rem;
     margin: 0 auto;
-    background: linear-gradient(
-        105deg,
-        rgba($color-white, 0.9) 0%,
-        rgba($color-white, 0.9) 50%,
-        transparent 50%
-      ),
-      url(../img/nat-10.jpg);
+    background: -o-linear-gradient(345deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+    background: linear-gradient(105deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
     background-size: cover;
     position: relative;
     height: 54.2rem;
     overflow: hidden;
     border-radius: 3px;
+    -webkit-box-shadow: 0 0 4rem 0rem rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 4rem 0rem rgba(0, 0, 0, 0.5);
 
     @include respond(md) {
-      background: linear-gradient(
-          105deg,
-          rgba($color-white, 0.9) 0%,
-          rgba($color-white, 0.9) 70%,
-          transparent 70%
-        ),
-        url(../img/nat-10.jpg);
+      background: -o-linear-gradient(345deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 70%, transparent 70%), url(../img/nat-10.jpg);
+      background: linear-gradient(105deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 70%, transparent 70%), url(../img/nat-10.jpg);
     }
 
     @include respond(xs) {
       height: auto;
-      background: linear-gradient(
-          105deg,
-          rgba($color-white, 0.9) 0%,
-          rgba($color-white, 0.9) 100%,
-          transparent 100%
-        ),
-        url(../img/nat-10.jpg);
+      background: -o-linear-gradient(345deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 100%, transparent 100%), url(../img/nat-10.jpg);
+      background: linear-gradient(105deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 100%, transparent 100%), url(../img/nat-10.jpg);
     }
 
     &__form {
@@ -79,11 +70,41 @@
       .input-field:focus {
         outline: none;
         border-bottom: 3px solid $color-primary;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
         transition: all 0.4s;
       }
 
       .input-field:focus:invalid {
         border-bottom: 3px solid $color-secondary;
+      }
+
+      ::-webkit-input-placeholder {
+        color: $color-grey;
+        text-transform: uppercase;
+        font-family: inherit;
+        font-size: 1.2rem;
+      }
+
+      ::-moz-placeholder {
+        color: $color-grey;
+        text-transform: uppercase;
+        font-family: inherit;
+        font-size: 1.2rem;
+      }
+
+      :-ms-input-placeholder {
+        color: $color-grey;
+        text-transform: uppercase;
+        font-family: inherit;
+        font-size: 1.2rem;
+      }
+
+      ::-ms-input-placeholder {
+        color: $color-grey;
+        text-transform: uppercase;
+        font-family: inherit;
+        font-size: 1.2rem;
       }
 
       ::placeholder {
@@ -94,20 +115,35 @@
       }
 
       .booking__form__label__container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         gap: 5rem;
 
         @include respond(xs) {
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-box-align: start;
+          -ms-flex-align: start;
           align-items: start;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column;
         }
       }
 
       .booking__form__radio__label {
         color: $color-grey-dark;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         position: relative;
         padding-left: 4rem;
@@ -153,7 +189,11 @@
       .submit-btn {
         @include respond(xs) {
           text-align: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
         }
       }

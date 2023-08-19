@@ -1,13 +1,57 @@
-@keyframes slide-from-left {
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 5 version
+*/
+
+@-webkit-keyframes slide-from-left {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
   }
   80% {
+    -webkit-transform: translateX(10%);
     transform: translateX(10%);
   }
   100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  80% {
+    -webkit-transform: translateX(10%);
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slide-from-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  80% {
+    -webkit-transform: translateX(-10%);
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
 }
@@ -15,24 +59,42 @@
 @keyframes slide-from-right {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(100%);
     transform: translateX(100%);
   }
   80% {
+    -webkit-transform: translateX(-10%);
     transform: translateX(-10%);
   }
   100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
+    -webkit-transform: translateY(100%);
     transform: translateY(100%);
   }
   100% {
     opacity: 1;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }

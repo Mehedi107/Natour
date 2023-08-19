@@ -7,8 +7,12 @@
   }
 
   .tours__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 9rem;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 
     @include respond(lg) {
@@ -17,14 +21,26 @@
 
     @include respond(md) {
       padding: 0 2rem;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
     }
 
     &--text {
       width: 50%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       gap: 4.8rem;
 
@@ -43,14 +59,21 @@
       }
 
       .tours__content--img {
+        -webkit-box-shadow: rgba(17, 17, 26, 0.5) 0px 24px 80px;
         box-shadow: rgba(17, 17, 26, 0.5) 0px 24px 80px;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
         position: absolute;
         cursor: pointer;
         outline-offset: 1.5rem;
 
         &:hover {
           z-index: 999;
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
           transform: scale(1.1);
           outline: 1.5rem solid $color-primary;
           border-radius: 1rem;
@@ -72,6 +95,8 @@
         }
 
         @include respond(sm) {
+          -webkit-transform: scale(1);
+          -ms-transform: scale(1);
           transform: scale(1);
           outline-offset: 0.5rem;
         }
